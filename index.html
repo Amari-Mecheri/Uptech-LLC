@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uptech LLC - Digital Transformation & Smart Operations</title>
+    <title>Uptech LLC - Digital Transformation & Project Management</title>
     <style>
         * {
             margin: 0;
@@ -27,7 +27,7 @@
             z-index: 1000;
             padding: 1rem 0;
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
         }
 
         nav {
@@ -126,9 +126,16 @@
             font-size: 1.3rem;
             margin-bottom: 2rem;
             color: #ccc;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .value-proposition {
+            font-size: 1.1rem;
+            color: #00d4ff;
+            margin-bottom: 2rem;
+            font-weight: 600;
         }
 
         .cta-button {
@@ -209,16 +216,15 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
             margin-top: 3rem;
         }
 
         .service-card {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            padding: 2.5rem;
+            padding: 3rem;
             border-radius: 20px;
-            text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 212, 255, 0.1);
             position: relative;
@@ -231,7 +237,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
+            height: 4px;
             background: linear-gradient(90deg, #00d4ff, #0099cc);
             transform: scaleX(0);
             transition: transform 0.3s ease;
@@ -246,21 +252,74 @@
             box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
         }
 
-        .service-icon {
+        .service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .service-number {
             font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-weight: bold;
             color: #00d4ff;
+            margin-right: 1rem;
         }
 
         .service-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
             color: #fff;
+            margin-bottom: 0.5rem;
         }
 
-        .service-card p {
+        .service-subtitle {
+            font-size: 1rem;
+            color: #00d4ff;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-content {
             color: #ccc;
-            line-height: 1.6;
+            line-height: 1.8;
+        }
+
+        .service-content h4 {
+            color: #fff;
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.1rem;
+        }
+
+        .service-content ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .service-content li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-content li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+        }
+
+        .service-content p {
+            margin-bottom: 1rem;
+        }
+
+        .methodologies {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .methodologies strong {
+            color: #00d4ff;
         }
 
         /* About Section */
@@ -270,10 +329,9 @@
         }
 
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .about-text {
@@ -288,15 +346,37 @@
 
         .about-text p {
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 1.8;
+        }
+
+        .transversal-approach {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .transversal-approach h3 {
+            color: #00d4ff;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .transversal-approach h3::before {
+            content: '🔁';
+            margin-right: 1rem;
         }
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .stat {
@@ -319,20 +399,20 @@
             font-size: 0.9rem;
         }
 
-        /* Expertise Section */
-        .expertise {
+        /* Technologies Section */
+        .technologies {
             padding: 80px 0;
             background: #111;
         }
 
-        .expertise-grid {
+        .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .expertise-item {
+        .tech-category {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             padding: 2rem;
             border-radius: 15px;
@@ -340,33 +420,20 @@
             transition: all 0.3s ease;
         }
 
-        .expertise-item:hover {
+        .tech-category:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 212, 255, 0.1);
         }
 
-        .expertise-item h3 {
+        .tech-category h3 {
             color: #00d4ff;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
 
-        .expertise-item ul {
-            list-style: none;
+        .tech-category .tech-list {
             color: #ccc;
-        }
-
-        .expertise-item li {
-            padding: 0.3rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .expertise-item li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: #00d4ff;
+            font-size: 0.95rem;
         }
 
         /* Contact Section */
@@ -443,17 +510,16 @@
                 font-size: 1.1rem;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
             .services-grid {
                 grid-template-columns: 1fr;
             }
 
+            .service-card {
+                padding: 2rem;
+            }
+
             .stats {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -478,7 +544,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#technologies">Technologies</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -486,45 +552,96 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Digital Transformation Excellence</h1>
-            <p>Leading enterprise transformations with 25+ years of expertise in program delivery, smart operations, and strategic technology solutions.</p>
-            <a href="#contact" class="cta-button">Start Your Transformation</a>
+            <h1>Strategic Digital Transformation</h1>
+            <p class="value-proposition">Bridging strategy, organization, and technology through expert project management and innovative solutions</p>
+            <p>25+ years of expertise in leading complex transformations, from strategic planning to technical implementation. Specialized in PRINCE2/PMI project management, organizational consulting, and cutting-edge digital solutions.</p>
+            <a href="#contact" class="cta-button">Discuss Your Project</a>
         </div>
     </section>
 
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
+            <h2 class="section-title">🎯 My Service Offering</h2>
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <div class="service-icon">🚀</div>
-                    <h3>Digital Transformation</h3>
-                    <p>End-to-end digital transformation projects that bridge business operations and technology solutions, delivering measurable impact and competitive advantage.</p>
+                    <div class="service-header">
+                        <div class="service-number">1</div>
+                        <div>
+                            <h3>Project Management & Direction</h3>
+                            <p class="service-subtitle">Strategic, operational, and methodological leadership of complex projects</p>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="methodologies">
+                            <strong>Methodologies:</strong> PRINCE2, PMI (PMBOK), Agile/Scrum
+                        </div>
+                        <p><strong>Domains:</strong> Digital transformation, infrastructure, ERP, cloud migration, digital services</p>
+                        
+                        <h4>Services Offered:</h4>
+                        <ul>
+                            <li>Complete or partial project management</li>
+                            <li>Stakeholder and risk management</li>
+                            <li>Project process structuring (governance, reporting, KPIs)</li>
+                            <li>Coaching and mentoring of internal project managers</li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="service-card fade-in">
-                    <div class="service-icon">⚡</div>
-                    <h3>Program Recovery</h3>
-                    <p>Specialized in recovering stalled multi-million-euro programs, identifying critical gaps, and implementing solutions that deliver real value.</p>
+                    <div class="service-header">
+                        <div class="service-number">2</div>
+                        <div>
+                            <h3>Analysis, Consulting & Organization</h3>
+                            <p class="service-subtitle">Diagnosis, structuring, and organizational transformation support</p>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h4>Intervention Areas:</h4>
+                        <ul>
+                            <li>Business process analysis</li>
+                            <li>Improvement recommendations and strategic alignment</li>
+                            <li>Change management and team support</li>
+                        </ul>
+                        
+                        <p><strong>Domains:</strong> Digital transformation, service digitalization, process optimization, quality management</p>
+                        
+                        <h4>Methods:</h4>
+                        <ul>
+                            <li>Organizational audit</li>
+                            <li>Collaborative workshops (design thinking, co-design)</li>
+                            <li>IT or digital master plan development</li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="service-card fade-in">
-                    <div class="service-icon">🎯</div>
-                    <h3>Smart Operations</h3>
-                    <p>Optimization of operational processes through smart technology integration, real-time monitoring, and data-driven decision making.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🔧</div>
-                    <h3>Custom Solutions</h3>
-                    <p>Tailored software solutions including ERP systems, logistics platforms, and industry-specific applications built with modern technology stacks.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">📊</div>
-                    <h3>Quality & Risk Management</h3>
-                    <p>Comprehensive quality assurance and risk management frameworks to ensure operational excellence and regulatory compliance.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🏗️</div>
-                    <h3>Infrastructure Modernization</h3>
-                    <p>Legacy system modernization and infrastructure upgrades to support scalable, secure, and efficient business operations.</p>
+                    <div class="service-header">
+                        <div class="service-number">3</div>
+                        <div>
+                            <h3>Digital Solutions Development</h3>
+                            <p class="service-subtitle">Creation, evolution, and integration of custom digital solutions</p>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h4>Service Types:</h4>
+                        <ul>
+                            <li>Web development (front-end, back-end)</li>
+                            <li>Mobile applications (iOS, Android, cross-platform)</li>
+                            <li>On-premise & cloud solutions (Azure, AWS, private servers)</li>
+                            <li>APIs, system integration, automation</li>
+                        </ul>
+                        
+                        <div class="methodologies">
+                            <strong>Technologies:</strong> C++, C#, Go, JavaScript/TypeScript, React, Flutter, SQL/NoSQL
+                        </div>
+                        
+                        <h4>Approach:</h4>
+                        <ul>
+                            <li>User-centered design (UX/UI)</li>
+                            <li>Rapid and iterative prototyping</li>
+                            <li>Security, scalability, and performance built-in from conception</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -533,12 +650,14 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
-                <div class="about-text fade-in">
-                    <h2>About Uptech LLC</h2>
-                    <p>Uptech LLC is a premier consulting firm specializing in digital transformation and smart operations. With over 25 years of experience, we help organizations navigate complex technological challenges and achieve sustainable competitive advantages.</p>
-                    <p>Our hybrid approach combines strategic vision with technical leadership, enabling us to assess complex environments and select advanced solutions that deliver measurable impact. We have a proven track record of recovering stalled initiatives and leading cross-functional teams through successful enterprise transformations.</p>
-                    <p>From small local businesses to multinational corporations, we provide comprehensive consulting services that bridge the gap between business operations and technology solutions.</p>
+                <h2>About Uptech LLC</h2>
+                <p>Uptech LLC specializes in strategic digital transformation, combining deep project management expertise with innovative technology solutions. Our approach bridges the gap between business strategy and technical implementation.</p>
+                
+                <div class="transversal-approach fade-in">
+                    <h3>Transversal Approach</h3>
+                    <p>My added value is based on the fluid articulation between strategy, organization, and technology. I intervene both to structure and to implement, ensuring seamless integration across all aspects of digital transformation.</p>
                 </div>
+
                 <div class="stats fade-in">
                     <div class="stat">
                         <div class="stat-number">25+</div>
@@ -546,11 +665,11 @@
                     </div>
                     <div class="stat">
                         <div class="stat-number">€50M+</div>
-                        <div class="stat-label">Programs Delivered</div>
+                        <div class="stat-label">Programs Managed</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">100+</div>
-                        <div class="stat-label">Projects Completed</div>
+                        <div class="stat-label">Projects Delivered</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">99%</div>
@@ -561,69 +680,45 @@
         </div>
     </section>
 
-    <section id="expertise" class="expertise">
+    <section id="technologies" class="technologies">
         <div class="container">
             <h2 class="section-title">Technical Expertise</h2>
-            <div class="expertise-grid">
-                <div class="expertise-item fade-in">
-                    <h3>Programming Languages</h3>
-                    <ul>
-                        <li>JavaScript / TypeScript</li>
-                        <li>C# / .NET Framework</li>
-                        <li>C++ / Visual C++</li>
-                        <li>Python</li>
-                        <li>SQL (Multiple databases)</li>
-                    </ul>
-                </div>
-                <div class="expertise-item fade-in">
-                    <h3>Web Technologies</h3>
-                    <ul>
-                        <li>React / Angular</li>
-                        <li>ASP.NET Core</li>
-                        <li>HTML5 / CSS3</li>
-                        <li>Web Assembly</li>
-                        <li>API Development</li>
-                    </ul>
-                </div>
-                <div class="expertise-item fade-in">
-                    <h3>Database Systems</h3>
-                    <ul>
-                        <li>SQL Server</li>
-                        <li>MySQL / PostgreSQL</li>
-                        <li>Oracle</li>
-                        <li>PouchDB / CouchDB</li>
-                        <li>Firebase</li>
-                    </ul>
-                </div>
-                <div class="expertise-item fade-in">
+            <div class="tech-grid">
+                <div class="tech-category fade-in">
                     <h3>Project Management</h3>
-                    <ul>
-                        <li>PRINCE2 Certified</li>
-                        <li>Six Sigma</li>
-                        <li>P2M (PMAJ)</li>
-                        <li>ITIL Processes</li>
-                        <li>Agile Methodologies</li>
-                    </ul>
+                    <div class="tech-list">
+                        PRINCE2 Certified • PMI (PMBOK) • Agile/Scrum • Six Sigma • P2M (PMAJ) • ITIL • Risk Management • Change Management
+                    </div>
                 </div>
-                <div class="expertise-item fade-in">
+                <div class="tech-category fade-in">
+                    <h3>Programming Languages</h3>
+                    <div class="tech-list">
+                        C++ • C# (.NET) • Go • JavaScript/TypeScript • Python • SQL • Assembly (x86, MC68000)
+                    </div>
+                </div>
+                <div class="tech-category fade-in">
+                    <h3>Web & Mobile</h3>
+                    <div class="tech-list">
+                        React • Angular • Flutter • ASP.NET Core • HTML5 • CSS3 • Web Assembly • Progressive Web Apps
+                    </div>
+                </div>
+                <div class="tech-category fade-in">
+                    <h3>Databases & Cloud</h3>
+                    <div class="tech-list">
+                        SQL Server • MySQL • PostgreSQL • Oracle • PouchDB/CouchDB • Azure • AWS • Firebase
+                    </div>
+                </div>
+                <div class="tech-category fade-in">
                     <h3>Industries</h3>
-                    <ul>
-                        <li>Financial Services</li>
-                        <li>Transportation & Logistics</li>
-                        <li>Retail & E-commerce</li>
-                        <li>Healthcare</li>
-                        <li>Manufacturing</li>
-                    </ul>
+                    <div class="tech-list">
+                        Financial Services • Transportation & Logistics • Healthcare • Manufacturing • Retail • Energy & Utilities
+                    </div>
                 </div>
-                <div class="expertise-item fade-in">
-                    <h3>Specializations</h3>
-                    <ul>
-                        <li>Digital Transformation</li>
-                        <li>Program Recovery</li>
-                        <li>Risk Management</li>
-                        <li>Quality Assurance</li>
-                        <li>Change Management</li>
-                    </ul>
+                <div class="tech-category fade-in">
+                    <h3>Consulting Methods</h3>
+                    <div class="tech-list">
+                        Design Thinking • Lean • Business Process Analysis • Organizational Audit • Strategic Planning • UX/UI Design
+                    </div>
                 </div>
             </div>
         </div>
@@ -633,8 +728,8 @@
         <div class="container">
             <div class="contact-content">
                 <h2>Ready to Transform Your Business?</h2>
-                <p>Let's discuss how Uptech LLC can help you achieve your digital transformation goals and deliver measurable results.</p>
-                <a href="mailto:amari.mecheri@gmail.com" class="cta-button">Get In Touch</a>
+                <p>Let's discuss how we can help you achieve your digital transformation goals through strategic project management and innovative solutions.</p>
+                <a href="mailto:amari.mecheri@gmail.com" class="cta-button">Start the Conversation</a>
                 
                 <div class="contact-info">
                     <div class="contact-item fade-in">
