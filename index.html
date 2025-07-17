@@ -1562,6 +1562,729 @@
                     </div>
                 </div>
                 <div class="tech-category fade-in">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uptech LLC - Digital Transformation & Project Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0a0a0a;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00d4ff;
+            text-decoration: none;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .logo-tagline {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: normal;
+            color: #ccc;
+            margin-top: 0.2rem;
+            text-shadow: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00d4ff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="500" cy="500" r="400" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="2"/><circle cx="500" cy="500" r="300" fill="none" stroke="rgba(0,212,255,0.05)" stroke-width="1"/><circle cx="500" cy="500" r="200" fill="none" stroke="rgba(0,212,255,0.03)" stroke-width="1"/></svg>') center/cover;
+            animation: rotate 60s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .value-proposition {
+            font-size: 1.1rem;
+            color: #00d4ff;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #000;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #111;
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #fff;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .service-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #00d4ff;
+            margin-right: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-subtitle {
+            font-size: 1rem;
+            color: #00d4ff;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-content {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .service-content h4 {
+            color: #fff;
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.1rem;
+        }
+
+        .service-content ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .service-content li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-content li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+        }
+
+        .service-content p {
+            margin-bottom: 1rem;
+        }
+
+        .methodologies {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .methodologies strong {
+            color: #00d4ff;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: #0a0a0a;
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            color: #ccc;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .transversal-approach {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .transversal-approach h3 {
+            color: #00d4ff;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .transversal-approach h3::before {
+            content: '🔁';
+            margin-right: 1rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #00d4ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Technologies Section */
+        .technologies {
+            padding: 80px 0;
+            background: #111;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-category {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tech-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.1);
+        }
+
+        .tech-category h3 {
+            color: #00d4ff;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .tech-category .tech-list {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #0a0a0a;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: #ccc;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .contact-item h3 {
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item p {
+            color: #ccc;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        footer p {
+            color: #666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                Uptech LLC
+                <span class="logo-tagline">Strategy • Organization • Technology | Remote worldwide • On-site Africa & Middle East</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Strategic Digital Transformation</h1>
+            <p class="value-proposition">Bridging strategy, organization, and technology through expert project management and innovative solutions</p>
+            <p>25+ years of expertise in leading complex transformations, from strategic planning to technical implementation. Specialized in PRINCE2/PMI project management, organizational consulting, and cutting-edge digital solutions.</p>
+            <a href="#contact" class="cta-button">Discuss Your Project</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">🎯 My Service Offering</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <div class="service-number">1</div>
+                        <div>
+                            <h3>Project Management & Direction</h3>
+                            <p class="service-subtitle">Strategic, operational, and methodological leadership of complex projects</p>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="methodologies">
+                            <strong>Methodologies:</strong> PRINCE2, PMI (PMBOK), Waterfall, Lean
+                        </div>
+                        <p><strong>Domains:</strong> Digital transformation, infrastructure, ERP, cloud migration, digital services</p>
+                        
+                        <h4>Services Offered:</h4>
+                        <ul>
+                            <li>Complete or partial project management</li>
+                            <li>Stakeholder and risk management</li>
+                            <li>Project process structuring (governance, reporting, KPIs)</li>
+                            <li>Coaching and mentoring of internal project managers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <div class="service-number">2</div>
+                        <div>
+                            <h3>Analysis, Consulting & Organization</h3>
+                            <p class="service-subtitle">Diagnosis, structuring, and organizational transformation support</p>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h4>Intervention Areas:</h4>
+                        <ul>
+                            <li>Business process analysis</li>
+                            <li>Improvement recommendations and strategic alignment</li>
+                            <li>Change management and team support</li>
+                        </ul>
+                        
+                        <p><strong>Domains:</strong> Digital transformation, service digitalization, process optimization, quality management</p>
+                        
+                        <h4>Methods:</h4>
+                        <ul>
+                            <li>Organizational audit</li>
+                            <li>Collaborative workshops (design thinking, co-design)</li>
+                            <li>IT or digital master plan development</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <div class="service-number">3</div>
+                        <div>
+                            <h3>Digital Solutions Development</h3>
+                            <p class="service-subtitle">Creation, evolution, and integration of custom digital solutions</p>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h4>Service Types:</h4>
+                        <ul>
+                            <li>Web development (front-end, back-end)</li>
+                            <li>Mobile applications (iOS, Android, cross-platform)</li>
+                            <li>On-premise & cloud solutions (Azure, AWS, private servers)</li>
+                            <li>APIs, system integration, automation</li>
+                        </ul>
+                        
+                        <div class="methodologies">
+                            <strong>Technologies:</strong> C++, C#, Go, JavaScript/TypeScript, React, Flutter, SQL/NoSQL
+                        </div>
+                        
+                        <h4>Approach:</h4>
+                        <ul>
+                            <li>User-centered design (UX/UI)</li>
+                            <li>Rapid and iterative prototyping</li>
+                            <li>Security, scalability, and performance built-in from conception</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Uptech LLC</h2>
+                <p>Uptech LLC specializes in strategic digital transformation, combining deep project management expertise with innovative technology solutions. Our approach bridges the gap between business strategy and technical implementation.</p>
+                
+                <div class="transversal-approach fade-in">
+                    <h3>My Transversal Approach</h3>
+                    <p>My added value is based on the fluid articulation between strategy, organization, and technology. I intervene both to structure and to implement, ensuring seamless integration across all aspects of digital transformation.</p>
+                </div>
+
+                <div class="stats fade-in">
+                    <div class="stat">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">€50M+</div>
+                        <div class="stat-label">Programs Managed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technologies" class="technologies">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="tech-grid">
+                <div class="tech-category fade-in">
+                    <h3>Project Management</h3>
+                    <div class="tech-list">
+                        PRINCE2 Certified • PMI (PMBOK) • Waterfall • Lean • Six Sigma • P2M (PMAJ) • ITIL • Risk Management • Change Management
+                    </div>
+                </div>
+                <div class="tech-category fade-in">
+                    <h3>Programming Languages</h3>
+                    <div class="tech-list">
+                        C++ • C# (.NET) • Go • JavaScript/TypeScript • SQL • Assembly (x86, MC68000)
+                    </div>
+                </div>
+                <div class="tech-category fade-in">
+                    <h3>Web & Mobile</h3>
+                    <div class="tech-list">
+                        React • Angular • Flutter • ASP.NET Core • HTML5 • CSS3 • Web Assembly • Progressive Web Apps
+                    </div>
+                </div>
+                <div class="tech-category fade-in">
+                    <h3>Databases & Cloud</h3>
+                    <div class="tech-list">
+                        SQL Server • MySQL • PostgreSQL • Oracle • PouchDB/CouchDB • Azure • AWS • Firebase
+                    </div>
+                </div>
+                <div class="tech-category fade-in">
                     <h3>Industries</h3>
                     <div class="tech-list">
                         Financial Services • Transportation & Logistics • Healthcare • Manufacturing • Retail • Energy & Utilities
@@ -1582,7 +2305,79 @@
             <div class="contact-content">
                 <h2>Ready to Transform Your Business?</h2>
                 <p>Let's discuss how we can help you achieve your digital transformation goals through strategic project management and innovative solutions.</p>
-                <a href="mailto:amari.mecheri@gmail.com" class="cta-button">Start the Conversation</a>
+                <a href="mailto:amari.mecheri@uptechllc.com" class="cta-button">Start the Conversation</a>
+                
+                <div class="contact-info">
+                    <div class="contact-item fade-in">
+                        <h3>Email</h3>
+                        <p>amari.mecheri@uptechllc.com</p>
+                        <p>contact@uptechllc.com</p>
+                    </div>
+                    <div class="contact-item fade-in">
+                        <h3>Phone</h3>
+                        <p>+213.696.174.385</p>
+                    </div>
+                    <div class="contact-item fade-in">
+                        <h3>Location</h3>
+                        <p>Remote worldwide | On-site Africa & Middle East</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Uptech LLC. All rights reserved. | UptechLLC.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)';
+            }
+        });
+    </script>
+</body>
+</html>
+  <a href="mailto:amari.mecheri@gmail.com" class="cta-button">Start the Conversation</a>
                 
                 <div class="contact-info">
                     <div class="contact-item fade-in">
