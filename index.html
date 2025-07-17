@@ -54,6 +54,28 @@
             color: #ccc;
             margin-top: 0.2rem;
             text-shadow: none;
+            white-space: nowrap; /* Ensures single line on desktop */
+        }
+
+        /* Add line break after the pipe on mobile */
+        @media (max-width: 768px) {
+            .logo-tagline {
+                white-space: normal; /* Allows text to wrap */
+                line-height: 1.4; /* Improves readability */
+            }
+            .logo-tagline::before {
+                content: '\A'; /* Inserts newline */
+                white-space: pre; /* Preserves newline */
+                display: inline-block;
+                margin-left: -0.2rem; /* Adjusts alignment after pipe */
+            }
+            .logo-tagline::before {
+                content: ''; /* Reset to avoid duplicate newlines */
+            }
+            .logo-tagline span.pipe::after {
+                content: '\A'; /* Places newline after the pipe */
+                white-space: pre;
+            }
         }
 
         .nav-links {
@@ -561,7 +583,7 @@
         <nav>
             <div class="logo">
                 Uptech LLC
-                <span class="logo-tagline">Strategy • Organization • Technology | Remote worldwide • On-site Africa & Middle East</span>
+                <span class="logo-tagline">Strategy • Organization • Technology<span class="pipe"> | </span>Remote worldwide • On-site Africa & Middle East</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
